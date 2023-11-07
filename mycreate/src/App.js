@@ -1,21 +1,15 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
-
-class Subject extends Component {
-  render(){
-    return (
-      <header>
-            <h1>WEB</h1>
-            world wide web!
-      </header>
-    );
-  }
-}
+import TOC from "./components/TOC";
+import Content from "./components/Comtent";
+import Subject from "./components/Subject";
 
 function App() {
   return (
     <div className="App">
-      <Subject></Subject>
+      <Subject title="WEB" sub="world wide web!"></Subject>
+      <TOC></TOC>
+      <Content title="HTML" desc="HTML is HyerText Markup Language."></Content>
     </div>
   );
 }
