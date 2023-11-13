@@ -1,17 +1,20 @@
-import React, { Component } from 'react';
-
-class TOC extends Component {
-    render(){
-      return(
-        <nav>
-              <ul>
-                  <li><a href="1.html">HTML</a></li>
-                  <li><a href="2.css">CSS</a></li>
-                  <li><a href="3.js">JavaScript</a></li>
-              </ul>
-          </nav>
-      );
-    }
+function TOC(props) {
+  const lists = []
+  for(let i=0; i<props.topics.length; i++){
+      let t = props.topics[i];
+      lists.push(<li key={t.id}>
+          <a id={t.id} href={'/read/' + t.id} onClick={function(event){
+              event.preventDefault();
+              props.onChangeMode(Number(event.target.id));
+          }}>{t.title}</a>
+      </li>)
   }
+  return <nav>
+      <ol>
+          {lists}
+      </ol>
+
+  </nav>
+}
 
   export default TOC;
