@@ -27,7 +27,7 @@ function UserSingup(){
     setUserData({ ...userData, phone: event.target.value })
   }
   const handleRegister = () => {
-    axios.post('http://localhost:9000/api/auth/signup', userData)
+    axios.post('http://localhost:'hostnumber'/api/auth/signup', userData)
       .then(response => {
         console.log(response.data);
       })
@@ -61,7 +61,7 @@ function UserLogin({ handleLoginSuccess }){
   const handleLogin = () => {
     const userData = { username, password };
 
-    axios.post('http://localhost:9000/api/auth/signin', userData)
+    axios.post('http://localhost:'hostnumber'/api/auth/signin', userData)
       .then(response => {
         handleLoginSuccess(response.data);
         console.log(response.data.username);
